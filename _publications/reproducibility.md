@@ -3,7 +3,7 @@ title: "Reproducibility: Performance Evaluation of MemXCT on Azure CycleCloud Pl
 collection: publications
 category: manuscripts
 permalink: /publication/reproducibility
-excerpt: 'Yuchen Liu*, Yixuan Meng*, Kaiyuan Xu*, Zijun Xu*, <u>Tianyuan Wu*</u>, Yiwei Yang*, Shu Yin'
+excerpt: 'Yuchen Liu\*, Yixuan Meng\*, Kaiyuan Xu\*, Zijun Xu\*, <u>Tianyuan Wu\*</u>, Yiwei Yang\*, Shu Yin\* (\* All authors contributed equally).'
 date: 2021-11-11
 venue: 'IEEE Transactions on Parallel and Distributed Systems, 2021'
 paperurl: 'http://www.tianyuanwu.com/files/reproducibility.pdf'
