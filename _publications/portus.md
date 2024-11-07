@@ -1,9 +1,9 @@
 ---
 title: "Portus: Efficient DNN Checkpointing to Persistent Memory with Zero-Copy"
 collection: publications
-category: conf
+category: manuscripts
 permalink: /publication/portus
-excerpt: 'Yuanhao Li\*, <u>Tianyuan Wu\*</u>, Guancheng Li, Yanjie Song, Shu Yin (\* Equal contribution).'
+excerpt: 'Yuanhao Li\*, <u>Tianyuan Wu*</u>, Guancheng Li, Yanjie Song, Shu Yin (\* Equal contribution).'
 date: 2024-07-23
 venue: '44th IEEE International Conference on Distributed Computing Systems (ICDCS'24)'
 paperurl: 'http://www.tianyuanwu.com/files/portus.pdf'
