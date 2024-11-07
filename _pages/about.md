@@ -7,9 +7,11 @@ redirect_from:
   - /about.html
 ---
 
-My name is Tianyuan Wu. I’m a Computer Science and Engineering Ph.D. student at The [Hong Kong University of Science and Technology (HKUST)](https://hkust.edu.hk/). I’m advised by [Prof. Wei Wang](https://www.cse.ust.hk/~weiwa/).
+My name is Tianyuan Wu. I am a Ph.D. student in Computer Science and Engineering at The [Hong Kong University of Science and Technology (HKUST)](https://hkust.edu.hk/), where I amadvised by [Prof. Wei Wang](https://www.cse.ust.hk/~weiwa/).
 
-Before that, I earned my B.Eng. from the [School of Information Science and Technology](https://sist.shanghaitech.edu.cn/sist_en/) at [ShanghaiTech University](https://www.shanghaitech.edu.cn/eng/) in 2021. During my undergraduate studies, I was honored with both the Excellent Undergraduate Thesis Award and the Outstanding Undergraduate Award. From 2022 to 2023, I interned at the system research group of [Microsoft Research Asia](https://www.microsoft.com/en-us/research/lab/microsoft-research-asia/), where I was awarded the “Stars of the Future” award. My research interest focuses on machine learning systems, reliable deep learning systems, and reinforcement learning.
+
+I obtained my Bachelor of Engineering from the [School of Information Science and Technology]((https://sist.shanghaitech.edu.cn/sist_en/)) at [ShanghaiTech University](https://www.shanghaitech.edu.cn/eng/) in 2021. During my undergraduate studies, I was honored with the Excellent Undergraduate Thesis Award and the Outstanding Undergraduate Award. Subsequently, from 2022 to 2023, I interned at the system research group of [Microsoft Research Asia](https://www.microsoft.com/en-us/research/lab/microsoft-research-asia/), where I received the “Stars of the Future” award for my contributions on reinforcement learning-based NUMA scheduling on Microsoft Azure. 
+
 
 In my free time, I enjoy hiking and traveling, especially exploring snow mountains on the Tibetan plateau.
 

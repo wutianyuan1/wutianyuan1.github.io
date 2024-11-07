@@ -12,34 +12,52 @@ redirect_from:
 Education
 ======
 * Ph.D in Computer Science, Hong Kong University of Science and Technology, 2028 (expected)
-* M.S. in Computer Science, ShanghaiTech University, 2024
 * B.S. in Computer Science, ShanghaiTech University, 2021
 
 Work experience
 ======
-* Spring 2024: Academic Pages Collaborator
-  * Github University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+* **November 2023 - Present:** Research Intern at [Alibaba Group](https://www.alibabagroup.com/en-US/), Hangzhou, China
+  * Designed and implemented a straggler detection and mitigation framework for hybrid-parallel large model training.
+  * Analyzed production traces from the Alibaba HPAI cluster.
+  * Mentor: [Yinghao Yu](https://scholar.google.com/citations?user=_YgjRn0AAAAJ&hl=en&oi=ao)
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* **May 2022 - July 2023:** Research Intern at [Microsoft Research Asia](https://www.microsoft.com/en-us/research/lab/microsoft-research-asia/), Beijing, China
+  * Developed Catur, a NUMA-aware scheduler for VM allocation on Microsoft Azure utilizing reinforcement learning.
+  * Implemented system optimizations for reinforcement learning frameworks.
+  * Mentors: [Qi Chen](https://www.microsoft.com/en-us/research/people/cheqi/), [Hui Xue](https://www.microsoft.com/en-us/research/people/xuehui/)
 
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* **August 2021 - April 2022:** Teaching Assistant at NYU Shanghai, Shanghai, China
+  * Served as a teaching assistant for [CSCISHU 11 - Introduction to Computer Programming](https://bulletins.nyu.edu/courses/csci_shu/) in Fall 2021.
+  * Served as a teaching assistant for [CSCISHU 2314 - Discrete Mathematics](https://shanghai.nyu.edu/academics/majors/computer-science) in Spring 2022.
   
 Skills
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+- Programming Languages (in order of familiarity)
+  * Python
+  * C/C++
+  * CUDA
+  * Rust
+  * Shell
+  * JavaScript
+
+- HPC/OS-related Software (in order of familiarity)
+  * Linux (Ubuntu, Debian, CentOS, Arch Linux, Manjaro)
+  * Docker
+  * Kubernetes
+  * Slurm
+  * MPI, OpenMP
+
+- DL-related Frameworks (in order of familiarity)
+  * PyTorch
+  * Megatron-LM
+  * vLLM
+  * DeepSpeed
+  * Ray RLlib
+
+- Misc
+  * LaTeX
+  * Markdown
+  * HTML
 
 Publications
 ======
