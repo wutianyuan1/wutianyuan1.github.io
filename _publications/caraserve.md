@@ -3,7 +3,7 @@ title: "CaraServe: CPU-Assisted and Rank-Aware LoRA Serving for Generative LLM I
 collection: publications
 category: preprints
 permalink: /publication/caraserve
-excerpt: 'Suyi Li\*, Hanfeng Lu\*, <u>TTianyuan Wu</u>, Minchen Yu, Qizhen Weng, Xusheng Chen, Yizhou Shan, Binhang Yuan, Wei Wang (\* Equal contribution).'
+excerpt: 'Suyi Li\*, Hanfeng Lu\*, <u>Tianyuan Wu</u>, Minchen Yu, Qizhen Weng, Xusheng Chen, Yizhou Shan, Binhang Yuan, Wei Wang (\* Equal contribution).'
 date: 2024-01-15
 venue: 'Arxiv Preprint'
 paperurl: 'http://www.tianyuanwu.com/files/2401.11240v1.pdf'
