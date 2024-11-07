@@ -8,10 +8,10 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Tianyuan Wu / Madoka"
+title                    : "Tianyuan Wu (Madoka)"
 title_separator          : "-"
 name                     : &name "Tianyuan Wu"
-description              : &description "I am a SB"
+description              : &description "I am Tianyuan Wu."
 url                      : https://www.tianyuanwu.com # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "wutianyuan1/wutianyuan1.github.io"
@@ -48,7 +48,6 @@ author:
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
   # Social media
-  bluesky          : "bsky.app" # Replace this with you Bluesky username
   facebook         : # Username
   flickr           : # Username
   foursquare       : # Username
@@ -75,8 +74,6 @@ author:
 
 # Publication Category - The following the list of publication categories and their headings
 publication_category:
-  books:
-    title: 'Books'
   manuscripts:
     title: 'Journal Articles'    
   conferences:
