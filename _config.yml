@@ -74,8 +74,10 @@ author:
 
 # Publication Category - The following the list of publication categories and their headings
 publication_category:
+  conf:
+    title: 'Conference Papers'
   manuscripts:
-    title: 'Conference & Journal Articles'
+    title: 'Journal Articles'
   preprints:
     title: 'Preprints'
   
