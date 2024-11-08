@@ -1,5 +1,5 @@
 ---
-title: "Teaching assistant for CS100 - Introduction to Computer Programming (2019 Fall, 2020 Spring, 2022 Spring)"
+title: "Head teaching assistant for CS100 - Introduction to Computer Programming (2019 Fall, 2020 Spring, 2022 Spring)"
 collection: teaching
 type: "Undergraduate course"
 permalink: /teaching/shtc1
