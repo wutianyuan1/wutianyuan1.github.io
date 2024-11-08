@@ -5,7 +5,7 @@ category: conf
 permalink: /publication/raster
 excerpt: 'Yanjie Song\*, <u>Tianyuan Wu*</u>, Yuanhao Li, Guancheng Li, Yuchen Liu, Shu Yin, Wei Xue, Junchao Wang (\* Equal contribution).'
 date: 2024-11-22
-venue: '2024 ACM Symposium on Cloud Computing (SoCC'24)'
+venue: '2024 ACM Symposium on Cloud Computing (SoCC24)'
 paperurl: 'http://www.tianyuanwu.com/files/socc24-final138.pdf'
 citation: 'Yanjie Song, Tianyuan Wu, Yuanhao Li, Guancheng Li, Yuchen Liu, Shu Yin, Wei Xue, and Junchao Wang. "A Data Optimizer for Region-Aware Self-describing Files in Scientific Computing." In Proceedings of the 15th ACM Symposium on Cloud Computing, pp. 431-446. 2024.'
 ---
