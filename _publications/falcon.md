@@ -1,13 +1,13 @@
 ---
-title: "FALCON: Pinpointing and Mitigating Stragglers for Large-Scale Hybrid-Parallel Training"
+title: "GREYHOUND: Hunting Fail-Slows in Hybrid-Parallel Training at Scale"
 collection: publications
-category: preprints
+category: conf
 permalink: /publication/falcon
 excerpt: '<u>Tianyuan Wu</u>, Wei Wang, Yinghao Yu, Siran Yang, Wenchao Wu, Qinkai Duan, Guodong Yang, Jiamang Wang, Lin Qu, Liping Zhang.'
-date: 2024-09-18
-venue: 'Arxiv Preprint'
+date: 2025-04-25
+venue: '2025 USENIX Annual Technical Conference (USENIX ATC 25)'
 paperurl: 'http://www.tianyuanwu.com/files/2410.12588v1.pdf'
 citation: 'Tianyuan Wu, Wei Wang, Yinghao Yu, Siran Yang, Wenchao Wu, Qinkai Duan, Guodong Yang, Jiamang Wang, Lin Qu, and Liping Zhang. "FALCON: Pinpointing and Mitigating Stragglers for Large-Scale Hybrid-Parallel Training." arXiv preprint arXiv:2410.12588 (2024).'
 ---
 
-Fail-slows, or stragglers, are common but largely unheeded problems in large-scale hybrid-parallel training that spans thousands of GPU servers and runs for weeks to months. Yet, these problems are not well studied, nor can they be quickly detected and effectively mitigated. In this paper, we first present a characterization study on a shared production cluster with over 10,000 GPUs1. We find that fail-slows are caused by various CPU/GPU computation and cross-node networking issues, lasting from tens of seconds to nearly ten hours, and collectively delaying the average job completion time by 1.34%. The current practice is to manually detect these fail-slows and simply treat them as fail-stops using a checkpoint-and-restart failover approach, which are labor-intensive and time-consuming. In this paper, we propose FALCON, a framework that rapidly identifies fail-slowed GPUs and/or communication links, and effectively tackles them with a novel multi-level mitigation mechanism, all without human intervention. We have applied FALCON to detect human-labeled fail-slows in a production cluster with over 99% accuracy. Cluster deployment further demonstrates that FALCON effectively handles manually injected fail-slows, mitigating the training slowdown by 60.1%.
+Fail-slows, or stragglers, are common problems in large-scale hybrid-parallel training that runs on a large fleet of GPU servers for an extended period of time. Yet, these problems are not well studied. In this paper, we first present a characterization study on a shared production cluster with over 10,000 GPUs. We find that fail-slows manifest as transient stragglers caused by slow computations or communications due to contention, device degradation, or network congestion, lasting from sub-minutes to nearly ten hours, and delaying large training jobs by 1.34× on average. The current practice is to manually detect fail-slows and treat them as fail-stops by means of checkpoint-and-restart failover, which is time-consuming. In this paper, we propose GREYHOUND, a system that rapidly identifies slow GPUs and/or communication links, and effectively tackles them with a novel multi-level mitigation mechanism, all without human intervention. GREYHOUND correctly detects fail-slows in a production cluster with over 99% accuracy. Testbed experiment on 256 H800 GPUs further demonstrates that it effectively handles (manually injected) stragglers, mitigating the slowdown by 58.9%.
