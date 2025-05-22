@@ -1,8 +1,8 @@
 ---
-title: "GREYHOUND: Hunting Fail-Slows in Hybrid-Parallel Training at Scale"
+title: "Greyhound: Hunting Fail-Slows in Hybrid-Parallel Training at Scale"
 collection: publications
 category: conf
-permalink: /publication/falcon
+permalink: /publication/greyhound
 excerpt: '<u>Tianyuan Wu</u>, Wei Wang, Yinghao Yu, Siran Yang, Wenchao Wu, Qinkai Duan, Guodong Yang, Jiamang Wang, Lin Qu, Liping Zhang.'
 date: 2025-04-25
 venue: '2025 USENIX Annual Technical Conference (USENIX ATC 25)'

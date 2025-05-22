@@ -2,7 +2,7 @@
 title: "Toppings: CPU-Assisted, Rank-Aware Adapter Serving for LLM Inference"
 collection: publications
 category: conf
-permalink: /publication/caraserve
+permalink: /publication/toppings
 excerpt: 'Suyi Li\*, Hanfeng Lu\*, <u>Tianyuan Wu</u>, Minchen Yu, Qizhen Weng, Xusheng Chen, Yizhou Shan, Binhang Yuan, Wei Wang (\* Equal contribution).'
 date: 2025-04-25
 venue: '2025 USENIX Annual Technical Conference (USENIX ATC 25)'
