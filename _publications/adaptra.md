@@ -1,7 +1,7 @@
 ---
 title: "Adaptra: Straggler-Resilient Hybrid-Parallel Training with Pipeline Adaptation"
 collection: publications
-category: preprint
+category: preprints
 permalink: /publication/adaptra
 excerpt: '<u>Tianyuan Wu*</u>, Lunxi Cao*, Hangeng Lu, Xiaoxiao Jiang, Yinghao Yu, Siran Yang, Guodong Yang, Jiamang Wang, Lin Qu, Liping Zhang, Wei Wang.'
 date: 2025-05-01
