@@ -7,7 +7,7 @@ excerpt: '<u>Tianyuan Wu*</u>, Lunxi Cao*, Hangeng Lu, Xiaoxiao Jiang, Yinghao Y
 date: 2025-05-01
 venue: 'arXiv preprint'
 paperurl: 'http://www.tianyuanwu.com/files/2504.19232v1.pdf'
-citation: 'Tianyuan Wu, Lunxi Cao, Hangeng Lu, Xiaoxiao Jiang, Yinghao Yu, Siran Yang, Guodong Yang, Jiamang Wang, Lin Qu, Liping Zhang, and Wei Wang. "Adaptra: Straggler-Resilient Hybrid-Parallel Training with Pipeline Adaptation." arXiv preprint arXiv:2504.19232 (2025).'
+citation: 'Tianyuan Wu*, Lunxi Cao*, Hanfeng Lu, Xiaoxiao Jiang, Yinghao Yu, Siran Yang, Guodong Yang, Jiamang Wang, Lin Qu, Liping Zhang, and Wei Wang, "Attack of the Bubbles: Straggler-Resilient Pipeline Parallelism for Large Model Training," in the Proceedings of the 23rd USENIX Symposium on Networked Systems Design and Implementation (NSDI ’26), Renton, WA, USA, May 2026. (*Equal contribution)'
 ---
 
 Training large Deep Neural Network (DNN) models at scale often encounters straggler issues, mostly in communications due to network congestion, RNIC/switch defects, or
