@@ -1,11 +1,11 @@
 ---
 title: "Adaptra: Straggler-Resilient Hybrid-Parallel Training with Pipeline Adaptation"
 collection: publications
-category: preprints
+category: conf
 permalink: /publication/adaptra
 excerpt: '<u>Tianyuan Wu*</u>, Lunxi Cao*, Hangeng Lu, Xiaoxiao Jiang, Yinghao Yu, Siran Yang, Guodong Yang, Jiamang Wang, Lin Qu, Liping Zhang, Wei Wang.'
-date: 2025-05-01
-venue: 'arXiv preprint'
+date: 2025-07-14
+venue: 'Proceedings of the 23rd USENIX Symposium on Networked Systems Design and Implementation (NSDI ’26)'
 paperurl: 'http://www.tianyuanwu.com/files/2504.19232v1.pdf'
 citation: 'Tianyuan Wu*, Lunxi Cao*, Hanfeng Lu, Xiaoxiao Jiang, Yinghao Yu, Siran Yang, Guodong Yang, Jiamang Wang, Lin Qu, Liping Zhang, and Wei Wang, "Attack of the Bubbles: Straggler-Resilient Pipeline Parallelism for Large Model Training," in the Proceedings of the 23rd USENIX Symposium on Networked Systems Design and Implementation (NSDI ’26), Renton, WA, USA, May 2026. (*Equal contribution)'
 ---
