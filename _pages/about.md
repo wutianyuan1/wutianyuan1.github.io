@@ -19,6 +19,8 @@ Email: twubt [at] connect [dot] ust [dot] hk
 
 NEWS
 ======
+- [11/2025] I want a ticket of YinLin(银临)'s concert at Huanglong Sports Center (Hangzhou, China) hold on Nov 15th, anyone has got it?
+- [11/2025] Three RL-related papers [ROLL](https://arxiv.org/abs/2506.06122), [RollPacker](https://arxiv.org/abs/2509.21009), and [AReaL-Hex](https://arxiv.org/abs/2511.00796) are now accessable on arXiv.
 - [07/2025] [PipeMorph](http://www.tianyuanwu.com/files/2504.19232v1.pdf) was accepted by [NSDI'26](https://www.usenix.org/conference/nsdi26/)
 - [04/2025] [Greyhound](http://www.tianyuanwu.com/files/atc25-wu-tianyuan.pdf) and [Toppings](http://www.tianyuanwu.com/files/atc25-li-suyi-toppings.pdf) were accepted by [USENIX ATC'25](https://www.usenix.org/conference/atc25).
 - [11/2024] [RASTER](http://www.tianyuanwu.com/files/socc24-final138.pdf) was accepted by [ACM SoCC'24](https://acmsocc.org/2024/schedule.html).
