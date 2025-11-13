@@ -12,7 +12,7 @@ title                    : "Tianyuan Wu (Madoka)"
 title_separator          : "-"
 name                     : &name "Tianyuan Wu"
 description              : &description "I am Tianyuan Wu."
-url                      : https://www.tianyuanwu.com # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : https://wutianyuan1.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "wutianyuan1/wutianyuan1.github.io"
 

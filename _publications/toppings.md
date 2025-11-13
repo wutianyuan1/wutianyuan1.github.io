@@ -6,7 +6,7 @@ permalink: /publication/toppings
 excerpt: 'Suyi Li\*, Hanfeng Lu\*, <u>Tianyuan Wu</u>, Minchen Yu, Qizhen Weng, Xusheng Chen, Yizhou Shan, Binhang Yuan, Wei Wang (\* Equal contribution).'
 date: 2025-04-25
 venue: '2025 USENIX Annual Technical Conference (USENIX ATC 25)'
-paperurl: 'http://www.tianyuanwu.com/files/atc25-li-suyi-toppings.pdf'
+paperurl: 'http://wutianyuan1.github.io/files/atc25-li-suyi-toppings.pdf'
 citation: 'Suyi Li*, Hanfeng Lu*, Tianyuan Wu, Minchen Yu, Qizhen Weng, Xusheng Chen, Yizhou Shan, Binhang Yuan, and Wei Wang, ‘‘Toppings: CPU-Assisted, Rank-Aware Adapter Serving for LLM Inference,’’ in the Proceedings of USENIX Annual Technical Conference (ATC ’25), Boston, MA, USA, July 2025. (*Equal contribution)'
 ---
 
