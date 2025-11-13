@@ -19,10 +19,10 @@ Email: twubt [at] connect [dot] ust [dot] hk
 
 NEWS
 ======
-- [11/2025] I want a ticket of YinLin(银临)'s concert at Huanglong Sports Center (Hangzhou, China) hold on Nov 15th, anyone has got it?
+- [11/2025] Looking for a ticket for White Album 2 concert held in Yokohama, Japan on Feb 22nd, 2026, anyone has got it?
 - [11/2025] Three RL-related papers [ROLL](https://arxiv.org/abs/2506.06122), [RollPacker](https://arxiv.org/abs/2509.21009), and [AReaL-Hex](https://arxiv.org/abs/2511.00796) are now accessable on arXiv.
-- [07/2025] [PipeMorph](http://www.tianyuanwu.com/files/2504.19232v1.pdf) was accepted by [NSDI'26](https://www.usenix.org/conference/nsdi26/)
-- [04/2025] [Greyhound](http://www.tianyuanwu.com/files/atc25-wu-tianyuan.pdf) and [Toppings](http://www.tianyuanwu.com/files/atc25-li-suyi-toppings.pdf) were accepted by [USENIX ATC'25](https://www.usenix.org/conference/atc25).
-- [11/2024] [RASTER](http://www.tianyuanwu.com/files/socc24-final138.pdf) was accepted by [ACM SoCC'24](https://acmsocc.org/2024/schedule.html).
-- [06/2024] [Portus](https://www.computer.org/csdl/proceedings-article/icdcs/2024/860500a059/1ZCgEAXHPCE) was accepted by [ICDCS'24](https://icdcs2024.icdcs.org/).
-- [11/2021] Our [reproducibility paper](https://ieeexplore.ieee.org/abstract/document/9612082/) for MemXCT was published on [IEEE TPDS](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=71).
+- [07/2025] [PipeMorph](http://www.tianyuanwu.com/files/2504.19232v1.pdf) is accepted by [NSDI'26](https://www.usenix.org/conference/nsdi26/)
+- [04/2025] Two papers ([Greyhound](http://www.tianyuanwu.com/files/atc25-wu-tianyuan.pdf) and [Toppings](http://www.tianyuanwu.com/files/atc25-li-suyi-toppings.pdf)) are accepted by [USENIX ATC'25](https://www.usenix.org/conference/atc25).
+- [11/2024] [RASTER](http://www.tianyuanwu.com/files/socc24-final138.pdf) is accepted by [ACM SoCC'24](https://acmsocc.org/2024/schedule.html).
+- [06/2024] [Portus](https://www.computer.org/csdl/proceedings-article/icdcs/2024/860500a059/1ZCgEAXHPCE) is accepted by [ICDCS'24](https://icdcs2024.icdcs.org/).
+- [11/2021] Our [reproducibility paper](https://ieeexplore.ieee.org/abstract/document/9612082/) for MemXCT is published on [IEEE TPDS](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=71).
