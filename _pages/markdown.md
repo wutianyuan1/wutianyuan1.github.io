@@ -7,7 +7,22 @@ redirect_from:
   - /markdown.html
 ---
 
-## Madoka's Playlist
+## Madoka's Playlist - 2025
+
+The style has changed a lot since 2024 // 文艺复兴了属于是，我是银临老师的狗（x
+
+* 粼粼 - 银临
+* 流光记 - 银临
+* 腐草为萤 - 银临
+* 牵丝戏 - 银临
+* 锦鯉抄 - 银临
+* 棠梨煎雪 - 银临
+* 小さな恋のうた - 小さな恋のうた
+* 藍悼花 (feat. Lucia) - 酔シグレ
+* 花簧り - 滴草由実
+* 春江花月夜 - 祖娅纳惜
+
+## Madoka's Playlist - 2024
 * 変わらないもの - 奥華子
 * Siawase - 鎖那
 * ハロ／ハワユ - 初音ミク
