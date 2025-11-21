@@ -9,8 +9,6 @@ redirect_from:
 
 ## Madoka's Playlist - 2025
 
-The style has changed a lot since 2024 // 属于是梦回2010s了，我是银临老师的狗（x
-
 * 粼粼 - 银临
 * 流光记 - 银临
 * 腐草为萤 - 银临
