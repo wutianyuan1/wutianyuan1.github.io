@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>流水线并行模拟器</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            gap: 30px;
+            width: 95%;
+            max-width: 1400px;
+        }
+
+        .controls {
+            flex: 0 0 280px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            height: fit-content;
+        }
+
+        .control-group {
+            margin-bottom: 20px;
+        }
+
+        .control-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        .control-group input[type="number"],
+        .control-group select {
+            width: 100%;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+        }
+        
+        .time-inputs {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .time-inputs span {
+            font-weight: 500;
+        }
+
+        .time-inputs input {
+            width: 65px;
+        }
+
+        .control-group .slider-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .control-group input[type="range"] {
+            flex-grow: 1;
+        }
+
+
+        #run-button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #run-button:hover {
+            background-color: #0056b3;
+        }
+
+        .visualization {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #chart-title {
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        #pipeline-chart-container {
+            display: flex;
+            width: 100%;
+            background: #F2F2F2;
+            border: 1px solid black;
+        }
+        
+        #y-axis-labels {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            padding: 0 10px;
+            background-color: #e9ecef;
+        }
+
+        #generated-schedule {
+            cursor: text;
+            resize: vertical;
+        }
+        #generated-schedule:focus {
+            outline: 2px solid #007bff;
+        }
+
+        .stage-label {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        #pipeline-chart {
+            position: relative;
+            width: 100%;
+            min-height: 200px;
+        }
+
+        .batch-block {
+            position: absolute;
+            box-sizing: border-box;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            font-weight: bold;
+            transition: all 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>流水线并行模拟器</h1>
+
+    <div class="container">
+        <div class="controls">
+            <div class="control-group">
+                <label for="num-stages">Stage 数量</label>
+                <input id="num-stages" type="number" value="4" min="2" max="16">
+            </div>
+            <div class="control-group">
+                <label for="num-batches">Micro-batch 数量</label>
+                <input id="num-batches" type="number" value="16" min="1" max="100">
+            </div>
+            <div class="control-group">
+                <label for="policy">调度策略</label>
+                <select id="policy">
+                    <option value="ZeroBubble" selected>ZeroBubble</option>
+                    <option value="Gpipe">Gpipe</option>
+                    <option value="PipeDream">PipeDream-1F1B</option>
+                    <option value="PipeMorph">PipeMorph</option>
+                    <option value="Delta_i">Delta_i</option> 
+                    <option value="Static">Static (Replay)</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label>执行时间 (ms)</label>
+                <div class="time-inputs">
+                    <span>F:</span><input id="time-f" type="number" value="10" min="1">
+                    <span>Bᵢ:</span><input id="time-bi" type="number" value="10" min="1">
+                    <span>W:</span><input id="time-w" type="number" value="10" min="1">
+                </div>
+            </div>
+            <div class="control-group">
+                <label>通信延迟 (ms)</label>
+                <div id="comm-delay-sliders"></div>
+            </div>
+            <div class="control-group" id="warmup-container">
+                <div id="warmup-inputs"></div>
+            </div>
+            <div class="control-group" id="generated-schedule-container" style="display:none;">
+                <label>调度计划</label>
+                <textarea id="generated-schedule" rows="6" 
+                    style="width:100%; font-family: monospace; padding:6px; background:#f8f9fa;"
+                    readonly></textarea>
+            </div>
+            <div class="control-group" id="static-schedule-container">
+                <label for="static-schedule">静态调度计划 (每行一个 Stage)</label>
+                <textarea id="static-schedule" rows="6" style="width:100%; font-family: monospace; padding:6px;"></textarea>
+                <small>格式示例：<br>F1 F2 B1 W1<br>F1 B1 W1<br>...</small>
+            </div>
+            <button id="run-button">运行模拟 & 渲染</button>
+        </div>
+        <div class="visualization">
+            <div id="chart-title"></div>
+            <div id="pipeline-chart-container">
+                <div id="y-axis-labels"></div>
+                <div id="pipeline-chart"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- 1. 全局配置与模拟器逻辑 ---
+
+        let SLOW_FACTORS = Array(16).fill(1);
+
+        class Batch {
+            constructor(batch_idx, execution_time, fail_slow = false, min_begin_time = -1, stage = 0) {
+                this.batch_idx = batch_idx;
+                this.execution_time = Math.round(execution_time * (fail_slow ? SLOW_FACTORS[stage] : 1));
+                this.execution_begin = -1;
+                this.color = '#FFFFFF';
+                this.min_begin_time = min_begin_time;
+                this.type = 'base';
+            }
+            toString() { return `${this.type}${this.batch_idx + 1}`; }
+        }
+
+        class ForwardBatch extends Batch {
+            constructor(batch_idx, execution_time, fail_slow = false, min_begin_time = -1, stage = 0) {
+                super(batch_idx, execution_time, fail_slow, min_begin_time, stage);
+                this.color = '#FCCCB3';
+                this.type = 'F';
+            }
+        }
+
+        class BackwardWeightBatch extends Batch {
+            constructor(batch_idx, execution_time, fail_slow = false, min_begin_time = -1, stage = 0) {
+                super(batch_idx, execution_time, fail_slow, min_begin_time, stage);
+                this.color = '#FBE7A3';
+                this.type = 'W';
+            }
+        }
+        
+        class BackwardInputBatch extends Batch {
+            constructor(batch_idx, execution_time, fail_slow = false, min_begin_time = -1, stage = 0) {
+                super(batch_idx, execution_time, fail_slow, min_begin_time, stage);
+                this.color = '#CBE4E4';
+                this.type = 'B';
+            }
+        }
+
+        class PipelinePolicy {
+            pick_batch_to_run(task_queue, finish_queue = null, time = 0, stage = 0) { throw new Error("Not implemented"); }
+        }
+
+        class GpipePolicy extends PipelinePolicy {
+            pick_batch_to_run(task_queue, finish_queue, time, stage) {
+                const priority_map = { 'ForwardBatch': 3, 'BackwardInputBatch': 2, 'BackwardWeightBatch': 1 };
+                let minval = [Infinity, Infinity], minidx = -1;
+                for (let i = 0; i < task_queue.length; i++) {
+                    const batch = task_queue[i];
+                    const priority = priority_map[batch.constructor.name] || 0;
+                    const cur = [-priority, batch.batch_idx];
+                    if (cur[0] < minval[0] || (cur[0] === minval[0] && cur[1] < minval[1])) { minval = cur; minidx = i; }
+                }
+                return minidx;
+            }
+        }
+        
+        class PipeDreamPolicy extends PipelinePolicy {
+            constructor(num_stages) { super(); this.num_stages = num_stages; }
+            pick_batch_to_run(task_queue, finish_queue, time, stage) {
+                let gpu_mem = 0;
+                for(const b of finish_queue) {
+                    if (b instanceof ForwardBatch) gpu_mem += 1;
+                    else if (b instanceof BackwardInputBatch || b instanceof BackwardWeightBatch) gpu_mem -= 0.5;
+                }
+                const priority_map = { 'ForwardBatch': 1, 'BackwardWeightBatch': 2, 'BackwardInputBatch': 3 };
+                let minval = [Infinity, Infinity], minidx = -1;
+                for (let i = 0; i < task_queue.length; i++) {
+                    const batch = task_queue[i];
+                    const priority = priority_map[batch.constructor.name] || 0;
+                    const cur = [-priority, batch.batch_idx];
+                    if (cur[0] < minval[0] || (cur[0] === minval[0] && cur[1] < minval[1])) { minval = cur; minidx = i; }
+                }
+                if (minidx !== -1 && gpu_mem >= 1.5 * this.num_stages && task_queue[minidx] instanceof ForwardBatch) {
+                    let other_idx = task_queue.findIndex(b => !(b instanceof ForwardBatch));
+                    return other_idx !== -1 ? other_idx : null;
+                }
+                return minidx;
+            }
+        }
+
+        class ZeroBubblePolicy extends PipelinePolicy {
+            constructor(num_stages) { super(); this.num_stages = num_stages; }
+            pick_batch_to_run(task_queue, finish_queue, time, stage) {
+                const priority_map = { 'ForwardBatch': 2, 'BackwardWeightBatch': 1, 'BackwardInputBatch': 3 };
+                let minval = [Infinity, Infinity], minidx = -1;
+                for (let i = 0; i < task_queue.length; i++) {
+                    const batch = task_queue[i];
+                    const priority = priority_map[batch.constructor.name] || 0;
+                    const cur = [-priority, batch.batch_idx];
+                    if (cur[0] < minval[0] || (cur[0] === minval[0] && cur[1] < minval[1])) { minval = cur; minidx = i; }
+                }
+                return minidx;
+            }
+        }
+
+        class OurPolicy extends PipelinePolicy {
+            constructor(num_stages) { super(); this.num_stages = num_stages; }
+            pick_batch_to_run(task_queue, finish_queue, time, stage) {
+                const priority_map = { 'ForwardBatch': 2, 'BackwardWeightBatch': 1, 'BackwardInputBatch': 3 };
+                let minval = [Infinity, Infinity], minidx = -1;
+                for (let i = 0; i < task_queue.length; i++) {
+                    const batch = task_queue[i];
+                    const priority = priority_map[batch.constructor.name] || 0;
+                    const cur = [-priority, batch.batch_idx];
+                    if (cur[0] < minval[0] || (cur[0] === minval[0] && cur[1] < minval[1])) { minval = cur; minidx = i; }
+                }
+                if ((minidx == -1) || (time < task_queue[minidx].min_begin_time)) {
+                    minval = [Infinity, Infinity];
+                    // find bw fw batch to fill the bubble
+                    for (let i = 0; i < task_queue.length; i++) {
+                        const batch = task_queue[i];
+                        const priority = priority_map[batch.constructor.name] || 0;
+                        const cur = [-priority, batch.batch_idx];
+                        if (batch.min_begin_time <= time) {
+                            if (cur[0] < minval[0] || (cur[0] === minval[0] && cur[1] < minval[1])) { minval = cur; minidx = i; }
+                        }
+                    }
+                } 
+                return minidx
+            }
+        }
+
+        class FixedPolicy extends PipelinePolicy {
+            constructor(num_stages, scheduleLines) {
+                super();
+                this.num_stages = num_stages;
+                // scheduleLines: array of strings, e.g. ["F1 F2", "F1 B1 W1", ...]
+                this.schedule = [];
+                for (let i = 0; i < num_stages; i++) {
+                    if (i < scheduleLines.length && scheduleLines[i].trim()) {
+                        this.schedule[i] = scheduleLines[i].trim().split(/\s+/);
+                    } else {
+                        this.schedule[i] = [];
+                    }
+                }
+                this.count = new Array(num_stages).fill(0);
+            }
+
+            pick_batch_to_run(task_queue, finish_queue = null, time = 0, stage = 0) {
+                if (stage >= this.schedule.length || this.count[stage] >= this.schedule[stage].length) {
+                    return null; // 没有更多指令
+                }
+
+                const expectedToken = this.schedule[stage][this.count[stage]];
+                for (let idx = 0; idx < task_queue.length; idx++) {
+                    const batch = task_queue[idx];
+                    // 匹配字符串表示，并检查时间是否允许
+                    if (batch.toString() === expectedToken && time >= batch.min_begin_time) {
+                        this.count[stage]++;
+                        return idx;
+                    }
+                }
+                // 如果当前没有匹配项，不调度（等待）
+                return null;
+            }
+        }
+
+        class DeltaiPolicy extends PipelinePolicy {
+            constructor(num_stages, init_fwds) {
+                super();
+                this.num_stages = num_stages;
+                this.init_fwds = init_fwds; // array of length num_stages
+                this.scheduled_init_fs = new Array(num_stages).fill(0);
+                this.flags = new Array(num_stages).fill(0);
+            }
+
+            pick_batch_to_run(task_queue, finish_queue = null, time = 0, stage = 0) {
+                // Warmup phase: schedule initial forward passes
+                if (this.scheduled_init_fs[stage] < this.init_fwds[stage]) {
+                    for (let i = 0; i < task_queue.length; i++) {
+                        if (task_queue[i] instanceof ForwardBatch) {
+                            if (time < task_queue[i].min_begin_time) {
+                                return null;
+                            }
+                            this.scheduled_init_fs[stage]++;
+                            return i;
+                        }
+                    }
+                    return null;
+                }
+
+                // Normal scheduling after warmup
+                const priority_map = {
+                    [ForwardBatch.name]: 2,
+                    [BackwardWeightBatch.name]: 1,
+                    [BackwardInputBatch.name]: 3
+                };
+
+                let minval = [Infinity, Infinity, Infinity];
+                let minidx = -1;
+
+                for (let i = 0; i < task_queue.length; i++) {
+                    const batch = task_queue[i];
+                    const ready = (batch.min_begin_time <= time) ? 0 : 1;
+                    const priority = -(priority_map[batch.constructor.name] || 0);
+                    const batch_idx = batch.batch_idx;
+                    const cur = [ready, priority, batch_idx];
+
+                    if (cur[0] < minval[0] ||
+                        (cur[0] === minval[0] && cur[1] < minval[1]) ||
+                        (cur[0] === minval[0] && cur[1] === minval[1] && cur[2] < minval[2])) {
+                        minval = cur;
+                        minidx = i;
+                    }
+                }
+
+                if (minidx === -1) return null;
+
+                // Block forward if flag not set (to avoid too many forwards?)
+                if (this.flags[stage] === 0 && task_queue[minidx] instanceof ForwardBatch) {
+                    return null;
+                }
+
+                this.flags[stage] = 1;
+                return minidx;
+            }
+        }
+
+        class PipelineSimulator {
+            constructor(num_stages, num_batches, policy, slow_stages, comm_delay, execution_times, split_backward = true, dt = 1) {
+                this.num_stages = num_stages; this.num_batches = num_batches;
+                this.split_backward = split_backward; this.slow_stages = slow_stages;
+                this.comm_delay = comm_delay; this.policy = policy; this.dt = dt;
+                this.execution_times = execution_times;
+                
+                this.task_queues = Array.from({ length: this.num_stages }, () => []);
+                this.history_queues = Array.from({ length: this.num_stages }, () => []);
+                this.next_avail_times = Array(this.num_stages).fill(0);
+
+                for (let i = 0; i < this.num_batches; i++) {
+                    this.task_queues[0].push(new ForwardBatch(i, this.execution_times.tF, this.slow_stages.includes(0), -1, 0));
+                }
+            }
+            
+            getScheduleText() {
+                const lines = [];
+                for (let stage = 0; stage < this.num_stages; stage++) {
+                    const seq = this.history_queues[stage]
+                        .map(batch => batch.toString())
+                        .join(' ');
+                    lines.push(seq);
+                }
+                return lines.join('\n');
+            }
+
+            add_dependency(completion_time, i, batch) {
+                const { tF, tBI, tW } = this.execution_times;
+                if (batch instanceof ForwardBatch) {
+                    if (i !== this.num_stages - 1) {
+                        const comm = this.comm_delay[`${i}-${i+1}`] || 0;
+                        const min_start_time = completion_time + comm;
+                        this.task_queues[i + 1].push(new ForwardBatch(batch.batch_idx, tF, this.slow_stages.includes(i + 1), min_start_time, i + 1));
+                    } else if (this.split_backward) {
+                        const min_start_time = completion_time; // No delay for local dependency
+                        this.task_queues[i].push(new BackwardInputBatch(batch.batch_idx, tBI, this.slow_stages.includes(i), min_start_time, i));
+                        this.task_queues[i].push(new BackwardWeightBatch(batch.batch_idx, tW, this.slow_stages.includes(i), min_start_time, i));
+                    }
+                } else if (batch instanceof BackwardInputBatch) {
+                    if (i !== 0) {
+                        const comm = this.comm_delay[`${i-1}-${i}`] || 0;
+                        const min_start_time = completion_time + comm;
+                        this.task_queues[i - 1].push(new BackwardInputBatch(batch.batch_idx, tBI, this.slow_stages.includes(i - 1), min_start_time, i - 1));
+                        this.task_queues[i - 1].push(new BackwardWeightBatch(batch.batch_idx, tW, this.slow_stages.includes(i - 1), min_start_time, i - 1));
+                    }
+                }
+            }
+
+            simulate() {
+                let time = 0;
+                const finished_dependencies = new Set();
+                while (true) {
+                    const all_queues_empty = this.task_queues.every(q => q.length === 0);
+                    if (all_queues_empty) {
+                        const all_gpus_idle = this.next_avail_times.every(t => time >= t);
+                        if (all_gpus_idle) break;
+                    }
+                    for (let i = 0; i < this.num_stages; i++) {
+                        if (this.history_queues[i].length > 0) {
+                            const last_batch = this.history_queues[i][this.history_queues[i].length - 1];
+                            const finish_time = last_batch.execution_begin + last_batch.execution_time;
+                            const dependency_id = `${i}-${last_batch.type}-${last_batch.batch_idx}`;
+                            if (time >= finish_time && !finished_dependencies.has(dependency_id)) {
+                                this.add_dependency(finish_time, i, last_batch);
+                                finished_dependencies.add(dependency_id);
+                            }
+                        }
+                    }
+                    for (let i = 0; i < this.num_stages; i++) {
+                        if (time >= this.next_avail_times[i]) {
+                            if (this.task_queues[i].length === 0) continue;
+                            const batch_pos = this.policy.pick_batch_to_run(this.task_queues[i], this.history_queues[i], time, i);
+                            if (batch_pos === null || batch_pos === -1) continue;
+                            const candidate_batch = this.task_queues[i][batch_pos];
+                            if (time < candidate_batch.min_begin_time) continue;
+                            const batch = this.task_queues[i].splice(batch_pos, 1)[0];
+                            batch.execution_begin = time;
+                            this.next_avail_times[i] = batch.execution_begin + batch.execution_time;
+                            this.history_queues[i].push(batch);
+                        }
+                    }
+                    time += this.dt;
+                    if (time > 100000) { console.error("Simulation timed out!"); break; }
+                }
+                return time;
+            }
+
+            get_bubble_rate_and_time() {
+                let maxt = 0; let total_work = 0;
+                for (let i = 0; i < this.num_stages; i++) {
+                    for (const batch of this.history_queues[i]) {
+                        maxt = Math.max(maxt, batch.execution_begin + batch.execution_time);
+                        total_work += batch.execution_time;
+                    }
+                }
+                if (maxt === 0) return { bubbleRate: 0, totalTime: 0 };
+                const usage = total_work / (maxt * this.num_stages);
+                return { bubbleRate: (1 - usage) * 100, totalTime: maxt };
+            }
+        }
+
+        // --- 2. UI 控制与事件处理 ---
+        const numStagesInput = document.getElementById('num-stages');
+        const numBatchesInput = document.getElementById('num-batches');
+        const policySelect = document.getElementById('policy');
+        const timeFInput = document.getElementById('time-f');
+        const timeBIInput = document.getElementById('time-bi');
+        const timeWInput = document.getElementById('time-w');
+        const runButton = document.getElementById('run-button');
+        const commDelaySlidersDiv = document.getElementById('comm-delay-sliders');
+        const chartDiv = document.getElementById('pipeline-chart');
+        const yAxisDiv = document.getElementById('y-axis-labels');
+        const chartTitle = document.getElementById('chart-title');
+
+        function updateDelaySliders() {
+            const numStages = parseInt(numStagesInput.value);
+            commDelaySlidersDiv.innerHTML = '';
+            for (let i = 0; i < numStages - 1; i++) {
+                const sliderGroup = document.createElement('div');
+                sliderGroup.className = 'slider-container';
+                const label = document.createElement('span');
+                label.textContent = `S${i}↔S${i+1}:`;
+                const slider = document.createElement('input');
+                slider.type = 'range'; slider.min = 0; slider.max = 100;
+                slider.value = 0; slider.id = `delay-${i}-${i+1}`;
+                const valueSpan = document.createElement('span');
+                valueSpan.textContent = slider.value; valueSpan.id = `delay-val-${i}-${i+1}`;
+                slider.oninput = () => { valueSpan.textContent = slider.value; };
+                sliderGroup.appendChild(label); sliderGroup.appendChild(slider); sliderGroup.appendChild(valueSpan);
+                commDelaySlidersDiv.appendChild(sliderGroup);
+            }
+        }
+
+        function updateStaticScheduleInput() {
+            const policyName = policySelect.value;
+            const container = document.getElementById('static-schedule-container');
+            if (policyName === 'Static') {
+                container.style.display = 'block';
+            } else {
+                container.style.display = 'none';
+            }
+        }
+
+        function updateWarmupInputs() {
+            const policyName = policySelect.value;
+            const warmupDiv = document.getElementById('warmup-inputs');
+            warmupDiv.innerHTML = '';
+
+            if (policyName === 'Delta_i') {
+                const numStages = parseInt(numStagesInput.value) || 4;
+                const container = document.createElement('div');
+                container.style.display = 'flex';
+                container.style.flexDirection = 'column';
+                container.style.gap = '8px';
+
+                for (let i = 0; i < numStages; i++) {
+                    const row = document.createElement('div');
+                    row.style.display = 'flex';
+                    row.style.alignItems = 'center';
+                    row.style.gap = '8px';
+
+                    const label = document.createElement('span');
+                    label.textContent = `S${i} Warmup:`;
+                    label.style.fontWeight = '500';
+                    label.style.width = '90px';
+
+                    const input = document.createElement('input');
+                    input.type = 'number';
+                    input.min = '0';
+                    input.value = '2'; // 默认值，可调整
+                    input.id = `warmup-stage-${i}`;
+                    input.style.flex = '1';
+                    input.style.padding = '6px';
+                    input.style.border = '1px solid #ddd';
+                    input.style.borderRadius = '4px';
+
+                    row.appendChild(label);
+                    row.appendChild(input);
+                    container.appendChild(row);
+                }
+
+                warmupDiv.appendChild(container);
+            }
+        }
+
+        function runSimulationAndRender() {
+            const numStages = parseInt(numStagesInput.value);
+            const numBatches = parseInt(numBatchesInput.value);
+            const policyName = policySelect.value;
+            const execution_times = {
+                tF: parseInt(timeFInput.value),
+                tBI: parseInt(timeBIInput.value),
+                tW: parseInt(timeWInput.value)
+            };
+            const commDelay = {};
+            for (let i = 0; i < numStages - 1; i++) {
+                const slider = document.getElementById(`delay-${i}-${i+1}`);
+                if (slider) {
+                    const delay = parseInt(slider.value);
+                    commDelay[`${i}-${i+1}`] = delay; commDelay[`${i+1}-${i}`] = delay;
+                }
+            }
+
+            let policy;
+            if (policyName === 'Gpipe') {
+                policy = new GpipePolicy(numStages);
+            } else if (policyName === 'PipeDream') {
+                policy = new PipeDreamPolicy(numStages);
+            } else if (policyName === 'ZeroBubble') {
+                policy = new ZeroBubblePolicy(numStages);
+            } else if (policyName === 'PipeMorph') {
+                policy = new OurPolicy(numStages);
+            }
+            else if (policyName === 'Delta_i') {
+                init_fwds = [];
+                for (let i = 0; i < numStages; i++) {
+                    const input = document.getElementById(`warmup-stage-${i}`);
+                    const val = input ? parseInt(input.value) || 0 : 0;
+                    init_fwds.push(val);
+                }
+                policy = new DeltaiPolicy(numStages, init_fwds);
+            } else if (policyName === 'Static') {
+                const textarea = document.getElementById('static-schedule');
+                const content = textarea.value;
+                const lines = content.split('\n').map(line => line.trim()).filter(line => line);
+                while (lines.length < numStages) {
+                    lines.push('');
+                }
+                policy = new FixedPolicy(numStages, lines);
+            } else {
+                policy = new GpipePolicy(numStages);
+            }
+            const simulator = new PipelineSimulator(numStages, numBatches, policy, [], commDelay, execution_times);
+            
+            simulator.simulate();
+            const scheduleText = simulator.getScheduleText();
+            const genContainer = document.getElementById('generated-schedule-container');
+            const genTextarea = document.getElementById('generated-schedule');
+
+            if (policyName === 'Static') {
+                genContainer.style.display = 'none';
+            } else {
+                genTextarea.value = scheduleText;
+                genContainer.style.display = 'block';
+            }
+            renderChart(simulator);
+        }
+
+        function renderChart(simulator) {
+            chartDiv.innerHTML = ''; yAxisDiv.innerHTML = '';
+            const { bubbleRate, totalTime } = simulator.get_bubble_rate_and_time();
+            const numStages = simulator.num_stages;
+            const numBatches = simulator.num_batches;
+            chartTitle.textContent = `S=${numStages}, B=${numBatches} | 总时间 = ${totalTime}ms | 气泡率 = ${bubbleRate.toFixed(2)}%`;
+            for (let i = 0; i < numStages; i++) {
+                const label = document.createElement('div');
+                label.className = 'stage-label'; label.textContent = `S${i}`;
+                label.style.height = `${100 / numStages}%`;
+                label.style.display = 'flex'; label.style.alignItems = 'center';
+                yAxisDiv.appendChild(label);
+            }
+            simulator.history_queues.forEach((stage_history, stage_idx) => {
+                stage_history.forEach(batch => {
+                    if (totalTime === 0) return;
+                    const block = document.createElement('div');
+                    block.className = 'batch-block';
+                    const left = (batch.execution_begin / totalTime) * 100;
+                    const width = (batch.execution_time / totalTime) * 100;
+                    const top = (stage_idx / numStages) * 100;
+                    const height = 100 / numStages;
+                    block.style.left = `${left}%`; block.style.width = `${width}%`;
+                    block.style.top = `${top}%`; block.style.height = `${height}%`;
+                    block.style.backgroundColor = batch.color;
+                    const label = batch.toString();
+                    block.textContent = label;
+                    if (width < 2 || label.length > 2) block.style.fontSize = '10px';
+                    else if (label.length > 1) block.style.fontSize = '12px';
+                    else block.style.fontSize = '14px';
+                    chartDiv.appendChild(block);
+                });
+            });
+        }
+        
+        numStagesInput.addEventListener('change', () => {updateDelaySliders(); updateWarmupInputs(); });
+        runButton.addEventListener('click', runSimulationAndRender);
+        policySelect.addEventListener('change', () => {
+            updateWarmupInputs();
+            updateStaticScheduleInput(); 
+            const genContainer = document.getElementById('generated-schedule-container');
+            const policyName = policySelect.value;
+            if (policyName === 'Static') {
+                // Static 策略：隐藏生成的 schedule
+                genContainer.style.display = 'none';
+            } else {
+                // 其他策略：显示生成的 schedule
+                genTextarea.value = scheduleText;
+                genContainer.style.display = 'block';
+            }
+        });
+        document.addEventListener('DOMContentLoaded', () => { updateDelaySliders(); runSimulationAndRender(); updateStaticScheduleInput(); updateWarmupInputs(); });
+    </script>
+</body>
+</html>
