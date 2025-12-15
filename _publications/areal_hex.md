@@ -3,7 +3,7 @@ title: "AReaL-Hex: Accommodating Asynchronous RL Training over Heterogeneous GPU
 collection: publications
 category: conf
 permalink: /publication/areal_hex
-excerpt: 'Ran Yan, Youhe Jiang, <u>*Tianyuan Wu*</u>, Jiaxuan Gao, Zhiyu Mei, Wei Fu, Haohui Mai, Wei Wang, Yi Wu, Binhang Yuan.'
+excerpt: 'Ran Yan, Youhe Jiang, <u>*ianyuan Wu</u>, Jiaxuan Gao, Zhiyu Mei, Wei Fu, Haohui Mai, Wei Wang, Yi Wu, Binhang Yuan.'
 date: 2025-11-02
 venue: 'arXiv preprint'
 paperurl: 'https://arxiv.org/abs/2511.00796'

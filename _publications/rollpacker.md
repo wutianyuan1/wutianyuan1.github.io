@@ -3,7 +3,7 @@ title: "RollPacker: Mitigating Long-Tail Rollouts for Fast, Synchronous RL Post-
 collection: publications
 category: conf
 permalink: /publication/rollpacker
-excerpt: 'Wei Gao, Yuheng Zhao, Dakai An, <u>*Tianyuan Wu*</u>, Lunxi Cao, Shaopan Xiong, Ju Huang, Weixun Wang, Siran Yang, Wenbo Su, Jiamang Wang, Lin Qu, Bo Zheng, Wei Wang.'
+excerpt: 'Wei Gao, Yuheng Zhao, Dakai An, <u>Tianyuan Wu</u>, Lunxi Cao, Shaopan Xiong, Ju Huang, Weixun Wang, Siran Yang, Wenbo Su, Jiamang Wang, Lin Qu, Bo Zheng, Wei Wang.'
 date: 2025-09-25
 venue: 'arXiv preprint'
 paperurl: 'https://arxiv.org/abs/2509.21009'
