@@ -17,7 +17,8 @@ Email: twubt [at] connect [dot] ust [dot] hk
 
 NEWS
 ======
-- [12/2025] [RollMux](https://arxiv.org/abs/2512.11306v1) is now accessable on arXiv.
+- [01/2026] [Catur](http://wutianyuan1.github.io/publication/catur) is accepted to MLSys'26.
+- [12/2025] [RollMux](https://arxiv.org/abs/2512.11306v1) and [RollArt](https://arxiv.org/abs/2512.22560) are now accessable on arXiv.
 - [12/2025] [RollPacker](https://arxiv.org/abs/2509.21009) is accepted to [NSDI'26](https://www.usenix.org/conference/nsdi26/).
 - [11/2025] Looking for a ticket for White Album 2 concert held in Yokohama, Japan on Feb 22nd, 2026.
 - [11/2025] Three RL-related papers [ROLL](https://arxiv.org/abs/2506.06122), [RollPacker](https://arxiv.org/abs/2509.21009), and [AReaL-Hex](https://arxiv.org/abs/2511.00796) are now accessable on arXiv.
