@@ -6,7 +6,7 @@ permalink: /publication/catur
 excerpt: 'Yibo Zhao*, <u>Tianyuan Wu*</u>, Hui Xue, Qi Chen, Zhenhua Han, Zikai Xu, Yuntai Chang, Rui Gao, Steve Deng, Ray Jui-Hao Chiang, Mingxia Li, Yuqing Yang, Cheng Tan, Fan Yang, Peng Cheng, Yongqiang Xiong, Lili Qiu, Lidong Zhou.'
 date: 2025-07-14
 venue: '9th Annual Conference on Machine Learning and Systems (MLSys26)'
-paperurl: 'http://wutianyuan1.github.io/files/catur'
+paperurl: 'https://openreview.net/forum?id=guCUThRvX5'
 citation: 'Yibo Zhao*, Tianyuan Wu*, Hui Xue, Qi Chen, Zhenhua Han, Zikai Xu, Yuntai Chang, Rui Gao, Steve Deng, Ray Jui-Hao Chiang, Mingxia Li, Yuqing Yang, Cheng Tan, Fan Yang, Peng Cheng, Yongqiang Xiong, Lili Qiu, Lidong Zhou., "Virtual Machine NUMA Placement at Scale: Learning the Norm, Shielding the Tail", in the 9th Annual Conference on Machine Learning and Systems (MLSys26), Bellevue, WA, USA, May 2026. (*Equal contribution)'
 ---
 
