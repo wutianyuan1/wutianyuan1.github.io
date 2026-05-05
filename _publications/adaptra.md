@@ -3,7 +3,7 @@ title: "Attack of the Bubbles: Straggler-Resilient Pipeline Parallelism for Larg
 collection: publications
 category: conf
 permalink: /publication/adaptra
-excerpt: '<u>Tianyuan Wu*</u>, Lunxi Cao*, Hangeng Lu, Xiaoxiao Jiang, Yinghao Yu, Siran Yang, Guodong Yang, Jiamang Wang, Lin Qu, Liping Zhang, Wei Wang.'
+excerpt: '<u>Tianyuan Wu*</u>, Lunxi Cao*, Hangeng Lu, Xiaoxiao Jiang, Yinghao Yu, Siran Yang, Guodong Yang, Jiamang Wang, Lin Qu, Liping Zhang, Wei Wang. (Best Paper Award!)'
 date: 2025-07-14
 venue: 'Proceedings of the 23rd USENIX Symposium on Networked Systems Design and Implementation (NSDI ’26)'
 paperurl: 'http://wutianyuan1.github.io/files/nsdi26spring-final218'
