@@ -17,6 +17,7 @@ Email: twubt [at] connect [dot] ust [dot] hk
 
 NEWS
 ======
+- [05/2026] [Crab](https://arxiv.org/abs/2604.28138) is now accessable on arXiv.
 - [05/2026] [PipeMorph](http://wutianyuan1.github.io/files/2504.19232v1.pdf) honored with the Best Paper Award at [NSDI'26](https://www.usenix.org/conference/nsdi26/).
 - [04/2026] Three papers ([RollMux](https://arxiv.org/abs/2512.11306v1), [RollArt](https://arxiv.org/abs/2512.22560), and a trace analysis) accepted or conditional accepted to [OSDI'26](https://www.usenix.org/conference/osdi26).
 - [01/2026] [Catur](https://openreview.net/forum?id=guCUThRvX5) is accepted to [MLSys'26](https://mlsys.org/Conferences/2026).
