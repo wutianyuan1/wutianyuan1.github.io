@@ -3,7 +3,7 @@ title: "Virtual Machine NUMA Placement at Scale: Learning the Norm, Shielding th
 collection: publications
 category: conf
 permalink: /publication/catur
-excerpt: 'Yibo Zhao*, <u>Tianyuan Wu*</u>, Hui Xue, Qi Chen, Zhenhua Han, Zikai Xu, Yuntai Chang, Rui Gao, Steve Deng, Ray Jui-Hao Chiang, Mingxia Li, Yuqing Yang, Cheng Tan, Fan Yang, Peng Cheng, Yongqiang Xiong, Lili Qiu, Lidong Zhou (* Equal contribution).'
+excerpt: 'Yibo Zhao\*, <u>Tianyuan Wu*</u>, Hui Xue, Qi Chen, Zhenhua Han, Zikai Xu, Yuntai Chang, Rui Gao, Steve Deng, Ray Jui-Hao Chiang, Mingxia Li, Yuqing Yang, Cheng Tan, Fan Yang, Peng Cheng, Yongqiang Xiong, Lili Qiu, Lidong Zhou (\* Equal contribution).'
 date: 2025-07-14
 venue: '9th Annual Conference on Machine Learning and Systems (MLSys’26)'
 paperurl: 'https://openreview.net/forum?id=guCUThRvX5'

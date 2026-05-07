@@ -3,7 +3,7 @@ title: "RollArt: Scaling Agentic RL Training via Disaggregated Infrastructure"
 collection: publications
 category: conf
 permalink: /publication/rollart
-excerpt: 'Wei Gao*, Yuheng Zhao*, <u>Tianyuan Wu</u>*, Shaopan Xiong*, Weixun Wang*, Dakai An, Lunxi Cao, Dilxat Muhtar, Zichen Liu, Haizhou Zhao, Ju Huang, Siran Yang, Yongbin Li, Wenbo Su, Jiamang Wang, Lin Qu, Bo Zheng, Wei Wang (* Equal contribution).'
+excerpt: 'Wei Gao\*, Yuheng Zhao\*, <u>Tianyuan Wu</u>\*, Shaopan Xiong\*, Weixun Wang\*, Dakai An, Lunxi Cao, Dilxat Muhtar, Zichen Liu, Haizhou Zhao, Ju Huang, Siran Yang, Yongbin Li, Wenbo Su, Jiamang Wang, Lin Qu, Bo Zheng, Wei Wang (* Equal contribution).'
 date: 2025-12-12
 venue: 'USENIX OSDI’26'
 paperurl: 'https://arxiv.org/abs/2512.22560'
