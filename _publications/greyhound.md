@@ -5,9 +5,9 @@ category: conf
 permalink: /publication/greyhound
 excerpt: '<u>Tianyuan Wu</u>, Wei Wang, Yinghao Yu, Siran Yang, Wenchao Wu, Qinkai Duan, Guodong Yang, Jiamang Wang, Lin Qu, Liping Zhang.'
 date: 2025-04-25
-venue: '2025 USENIX Annual Technical Conference (USENIX ATC 25)'
+venue: '2025 USENIX Annual Technical Conference (USENIX ATC’25)'
 paperurl: 'http://wutianyuan1.github.io/files/atc25-wu-tianyuan.pdf'
-citation: 'Tianyuan Wu, Wei Wang, Yinghao Yu, Siran Yang, Wenchao Wu, Qinkai Duan, Guodong Yang, Jiamang Wang, Lin Qu, and Liping Zhang, ‘‘Greyhound: Hunting Fail-Slows in Hybrid-Parallel Training at Scale,’’ in the Proceedings of USENIX Annual Technical Conference (ATC ’25), Boston, MA, USA, July 2025.'
+# citation: 'Tianyuan Wu, Wei Wang, Yinghao Yu, Siran Yang, Wenchao Wu, Qinkai Duan, Guodong Yang, Jiamang Wang, Lin Qu, and Liping Zhang, ‘‘Greyhound: Hunting Fail-Slows in Hybrid-Parallel Training at Scale,’’ in the Proceedings of USENIX Annual Technical Conference (ATC ’25), Boston, MA, USA, July 2025.'
 ---
 
 [Presentation slides](http://wutianyuan1.github.io/files/ATC25_greyhound_presentation.pdf)

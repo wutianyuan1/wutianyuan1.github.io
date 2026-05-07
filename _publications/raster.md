@@ -3,11 +3,11 @@ title: "A Data Optimizer for Region-Aware Self-describing Files in Scientific Co
 collection: publications
 category: conf
 permalink: /publication/raster
-excerpt: 'Yanjie Song\*, <u>Tianyuan Wu*</u>, Yuanhao Li, Guancheng Li, Yuchen Liu, Shu Yin, Wei Xue, Junchao Wang (\* Equal contribution).'
+excerpt: 'Yanjie Song*, <u>Tianyuan Wu*</u>, Yuanhao Li, Guancheng Li, Yuchen Liu, Shu Yin, Wei Xue, Junchao Wang (* Equal contribution).'
 date: 2024-11-22
-venue: '2024 ACM Symposium on Cloud Computing (SoCC 24)'
+venue: '2024 ACM Symposium on Cloud Computing (SoCC’24)'
 paperurl: 'http://wutianyuan1.github.io/files/socc24-final138.pdf'
-citation: 'Yanjie Song, Tianyuan Wu, Yuanhao Li, Guancheng Li, Yuchen Liu, Shu Yin, Wei Xue, and Junchao Wang. "A Data Optimizer for Region-Aware Self-describing Files in Scientific Computing." In Proceedings of the 15th ACM Symposium on Cloud Computing, pp. 431-446. 2024.'
+# citation: 'Yanjie Song, Tianyuan Wu, Yuanhao Li, Guancheng Li, Yuchen Liu, Shu Yin, Wei Xue, and Junchao Wang. "A Data Optimizer for Region-Aware Self-describing Files in Scientific Computing." In Proceedings of the 15th ACM Symposium on Cloud Computing, pp. 431-446. 2024.'
 ---
 
 Acquiring data from scientific simulations for analytical purposes is inherently challenging due to the complex and irregularly shaped regions within which the data resides, particularly when using self-describing data formats. The process of region-based data distillation becomes even more arduous when employing persistent memory or parallel file systems. To tackle this challenge, we introduce RASTER (Region-Aware Self-describing daTa optimizER), a lightweight middleware designed for region-aware data preprocessing. RASTER dynamically reorganizes data into variable groups based on regional identifiers during runtime, thereby eliminating the need for sequential searches to locate the required data.
