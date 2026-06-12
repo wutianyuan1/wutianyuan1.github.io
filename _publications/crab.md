@@ -4,7 +4,7 @@ collection: publications
 category: preprints
 permalink: /publication/crab
 badge: 'arXiv'
-excerpt: '<u>Tianyuan Wu*</u>, Chaokun Chang\*, Lunxi Cao, Wei Gao, Wei Wang (\* Equal contribution).'
+excerpt: '<u>Tianyuan Wu*</u>, Chaokun Chang*, Lunxi Cao, Wei Gao, Wei Wang (* Equal contribution).'
 date: 2026-04-30
 venue: 'arXiv preprint, 2026.'
 paperurl: 'https://arxiv.org/abs/2604.28138'

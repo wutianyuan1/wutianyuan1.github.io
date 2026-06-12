@@ -4,7 +4,7 @@ collection: publications
 category: conf
 permalink: /publication/portus
 badge: 'ICDCS 24'
-excerpt: 'Yuanhao Li\*, <u>Tianyuan Wu*</u>, Guancheng Li, Yanjie Song, Shu Yin (\* Equal contribution).'
+excerpt: 'Yuanhao Li*, <u>Tianyuan Wu*</u>, Guancheng Li, Yanjie Song, Shu Yin (* Equal contribution).'
 date: 2024-07-23
 venue: 'IEEE International Conference on Distributed Computing Systems (ICDCS), Jersey City, July 2024.'
 paperurl: 'http://wutianyuan1.github.io/files/portus.pdf'

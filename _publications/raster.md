@@ -4,7 +4,7 @@ collection: publications
 category: conf
 permalink: /publication/raster
 badge: 'SoCC 24'
-excerpt: 'Yanjie Song\*, <u>Tianyuan Wu*</u>, Yuanhao Li, Guancheng Li, Yuchen Liu, Shu Yin, Wei Xue, Junchao Wang (\* Equal contribution).'
+excerpt: 'Yanjie Song*, <u>Tianyuan Wu*</u>, Yuanhao Li, Guancheng Li, Yuchen Liu, Shu Yin, Wei Xue, Junchao Wang (* Equal contribution).'
 date: 2024-11-22
 venue: 'ACM Symposium on Cloud Computing (SoCC), Redmond, November 2024.'
 paperurl: 'http://wutianyuan1.github.io/files/socc24-final138.pdf'

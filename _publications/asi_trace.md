@@ -4,7 +4,7 @@ collection: publications
 category: conf
 permalink: /publication/asi-trace
 badge: 'OSDI 26'
-excerpt: '<u>Tianyuan Wu</u>, et al.'
+excerpt: 'Suyi Li*, Lingyun Yang*, Haoxuan Yu, Sheng Yao, <u>Tianyuan Wu</u>, Xiaoxiao Jiang, Hanfeng Lu, Kangjin Wang, Chenhao Wang, Shenglin Xu, Lun Wang, Qingyang Duan, Shenghao Liang, Xiu Lin, Wenchao Wu, Yinghao Yu, Guodong Yang, Liping Zhang, Wei Wang (* Equal contribution).'
 date: 2025-12-12
 venue: 'USENIX Symposium on Operating Systems Design and Implementation (OSDI), Seattle, July 2026.'
 paperurl: ''

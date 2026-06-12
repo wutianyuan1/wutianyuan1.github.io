@@ -4,7 +4,7 @@ collection: publications
 category: conf
 permalink: /publication/rollart
 badge: 'OSDI 26'
-excerpt: 'Wei Gao\*, Yuheng Zhao\*, <u>Tianyuan Wu</u>\*, Shaopan Xiong\*, Weixun Wang\*, Dakai An, Lunxi Cao, Dilxat Muhtar, Zichen Liu, Haizhou Zhao, Ju Huang, Siran Yang, Yongbin Li, Wenbo Su, Jiamang Wang, Lin Qu, Bo Zheng, Wei Wang (\* Equal contribution).'
+excerpt: 'Wei Gao*, Yuheng Zhao*, <u>Tianyuan Wu</u>*, Shaopan Xiong*, Weixun Wang*, Dakai An, Lunxi Cao, Dilxat Muhtar, Zichen Liu, Haizhou Zhao, Ju Huang, Siran Yang, Yongbin Li, Wenbo Su, Jiamang Wang, Lin Qu, Bo Zheng, Wei Wang (* Equal contribution).'
 date: 2025-12-12
 venue: 'USENIX Symposium on Operating Systems Design and Implementation (OSDI), Seattle, July 2026.'
 paperurl: 'https://arxiv.org/abs/2512.22560'

@@ -4,7 +4,7 @@ collection: publications
 category: conf
 permalink: /publication/toppings
 badge: 'ATC 25'
-excerpt: 'Suyi Li\*, Hanfeng Lu\*, <u>Tianyuan Wu</u>, Minchen Yu, Qizhen Weng, Xusheng Chen, Yizhou Shan, Binhang Yuan, Wei Wang (\* Equal contribution).'
+excerpt: 'Suyi Li*, Hanfeng Lu*, <u>Tianyuan Wu</u>, Minchen Yu, Qizhen Weng, Xusheng Chen, Yizhou Shan, Binhang Yuan, Wei Wang (* Equal contribution).'
 date: 2025-04-25
 venue: 'USENIX Annual Technical Conference (ATC), Boston, July 2025.'
 paperurl: 'http://wutianyuan1.github.io/files/atc25-li-suyi-toppings.pdf'

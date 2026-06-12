@@ -4,7 +4,7 @@ collection: publications
 category: manuscripts
 permalink: /publication/reproducibility
 badge: 'TPDS'
-excerpt: 'Yuchen Liu\*, Yixuan Meng\*, Kaiyuan Xu\*, Zijun Xu\*, <u>Tianyuan Wu*</u>, Yiwei Yang\*, Shu Yin\* (\* All authors contributed equally).'
+excerpt: 'Yuchen Liu*, Yixuan Meng*, Kaiyuan Xu*, Zijun Xu*, <u>Tianyuan Wu*</u>, Yiwei Yang*, Shu Yin* (* All authors contributed equally).'
 date: 2021-11-11
 venue: 'IEEE Transactions on Parallel and Distributed Systems (TPDS), 2021.'
 paperurl: 'http://wutianyuan1.github.io/files/reproducibility.pdf'

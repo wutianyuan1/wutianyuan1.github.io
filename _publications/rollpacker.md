@@ -4,7 +4,7 @@ collection: publications
 category: conf
 permalink: /publication/rollpacker
 badge: 'NSDI 26'
-excerpt: 'Wei Gao\*, Yuheng Zhao\*, Dakai An, <u>Tianyuan Wu</u>, Lunxi Cao, Shaopan Xiong, Ju Huang, Weixun Wang, Siran Yang, Wenbo Su, Jiamang Wang, Lin Qu, Bo Zheng, Wei Wang (\* Equal contribution).'
+excerpt: 'Wei Gao*, Yuheng Zhao*, Dakai An, <u>Tianyuan Wu</u>, Lunxi Cao, Shaopan Xiong, Ju Huang, Weixun Wang, Siran Yang, Wenbo Su, Jiamang Wang, Lin Qu, Bo Zheng, Wei Wang (* Equal contribution).'
 date: 2025-09-25
 venue: 'USENIX Symposium on Networked Systems Design and Implementation (NSDI), Renton, May 2026.'
 paperurl: 'https://arxiv.org/abs/2509.21009'

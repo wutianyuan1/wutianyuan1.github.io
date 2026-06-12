@@ -2,10 +2,10 @@
 title: "Attack of the Bubbles: Straggler-Resilient Pipeline Parallelism for Large Model Training"
 collection: publications
 category: conf
-permalink: /publication/adaptra
+permalink: /publication/pipemorph
 badge: 'NSDI 26'
 award: 'Best Paper Award'
-excerpt: '<u>Tianyuan Wu*</u>, Lunxi Cao\*, Hanfeng Lu, Xiaoxiao Jiang, Yinghao Yu, Siran Yang, Guodong Yang, Jiamang Wang, Lin Qu, Liping Zhang, Wei Wang (\* Equal contribution).'
+excerpt: '<u>Tianyuan Wu*</u>, Lunxi Cao*, Hanfeng Lu, Xiaoxiao Jiang, Yinghao Yu, Siran Yang, Guodong Yang, Jiamang Wang, Lin Qu, Liping Zhang, Wei Wang (* Equal contribution).'
 date: 2025-07-14
 venue: 'USENIX Symposium on Networked Systems Design and Implementation (NSDI), Renton, May 2026.'
 paperurl: 'http://wutianyuan1.github.io/files/nsdi26spring-final218.pdf'

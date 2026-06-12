@@ -2,7 +2,7 @@
 title: "Weave: Efficient Co-Scheduling for Disaggregated RL Post-Training"
 collection: publications
 category: conf
-permalink: /publication/rollmux
+permalink: /publication/weave
 badge: 'OSDI 26'
 excerpt: '<u>Tianyuan Wu</u>, Lunxi Cao, Yining Wei, Wei Gao, Yuheng Zhao, Dakai An, Shaopan Xiong, Zhiqiang Lv, Ju Huang, Siran Yang, Yinghao Yu, Jiamang Wang, Lin Qu, Wei Wang.'
 date: 2025-12-12
