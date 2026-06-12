@@ -11,7 +11,7 @@ locale                   : "en-US"
 title                    : "Tianyuan Wu (Madoka)"
 title_separator          : "-"
 name                     : &name "Tianyuan Wu"
-description              : &description "I am Tianyuan Wu."
+description              : &description "PhD candidate at HKUST, working on ML systems, distributed training, and RL infrastructure."
 url                      : https://wutianyuan1.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "wutianyuan1/wutianyuan1.github.io"
@@ -28,7 +28,7 @@ author:
   location         : "Hong Kong, China"
   employer         : "HKUST"
   uri              : # URL
-  email            : "twubt@cse.ust.hk" 
+  email            : "twubt@connect.ust.hk" 
 
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile

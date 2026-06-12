@@ -13,7 +13,7 @@ Education
 ======
 * **Ph.D. in Computer Science**, The Hong Kong University of Science and Technology, 2024 - 2027 (Expected)
   * CGPA: 3.98/4.30, Advisor: [Prof. Wei Wang](https://www.cse.ust.hk/~weiwa/)
-* **B.S. in Computer Science**, ShanghaiTech University, 2017 - 2021
+* **B.E. in Computer Science**, ShanghaiTech University, 2017 - 2021
   * GPA: 3.79/4.00, Ranking: 2/209 (Top 1%)
 
 Research Overview
