@@ -19,7 +19,7 @@ NEWS
 ======
 - [05/2026] [Crab](https://arxiv.org/abs/2604.28138) is now accessible on arXiv.
 - [05/2026] [PipeMorph](http://wutianyuan1.github.io/files/2504.19232v1.pdf) honored with the Best Paper Award at [NSDI'26](https://www.usenix.org/conference/nsdi26/).
-- [04/2026] Three papers ([Weave](https://arxiv.org/abs/2512.11306v1), [RollArt](https://arxiv.org/abs/2512.22560), and a trace analysis) accepted or conditionally accepted to [OSDI'26](https://www.usenix.org/conference/osdi26).
+- [04/2026] Three papers ([Weave](https://arxiv.org/abs/2512.11306v1), [RollArt](https://arxiv.org/abs/2512.22560), and [ASI Trace Analysis](https://www.usenix.org/conference/osdi26)) accepted to [OSDI'26](https://www.usenix.org/conference/osdi26).
 - [01/2026] [Catur](https://openreview.net/forum?id=guCUThRvX5) is accepted to [MLSys'26](https://mlsys.org/Conferences/2026).
 - [12/2025] [Weave](https://arxiv.org/abs/2512.11306v1) and [RollArt](https://arxiv.org/abs/2512.22560) are now accessible on arXiv.
 - [12/2025] [RollPacker](https://arxiv.org/abs/2509.21009) is accepted to [NSDI'26](https://www.usenix.org/conference/nsdi26/).
