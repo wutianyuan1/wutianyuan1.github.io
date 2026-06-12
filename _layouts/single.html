@@ -36,6 +36,13 @@ layout: default
         
         {% if page.collection == 'teaching' %}
           <p> {{ page.type }}, <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }} </p>
+        {% elsif page.collection == 'publications' and page.badge %}
+          <p>
+            <span class="pub-badge pub-badge-{{ page.badge | split: ' ' | first | downcase }}">{{ page.badge }}</span>
+            <span style="font-style:italic;color:#666;">{{ page.venue }}</span>
+            {% if page.award %}<span class="pub-award">&#127942; {{ page.award }}</span>{% endif %}
+          </p>
+          {% if page.excerpt %}<p class="pub-authors" style="font-size:0.92em;">{{ page.excerpt }}</p>{% endif %}
         {% elsif page.venue and page.date %}
           <p>Published in <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }} </p>
         {% elsif page.date %}
