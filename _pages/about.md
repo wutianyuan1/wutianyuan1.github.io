@@ -18,7 +18,7 @@ Email: twubt [at] connect [dot] ust [dot] hk
 NEWS
 ======
 - [09/2026] [AgentProf](http://wutianyuan1.github.io/files/agenticos26-paper27.pdf) will appear at AgenticOS'26.
-- [09/2026] [Scalable and Efficient Simulation of LLM Training](https://wutianyuan1.github.io/files/sc26-echo.pdf) will appear at [SC'26](https://sc26.supercomputing.org/).
+- [09/2026] [Moye](https://wutianyuan1.github.io/files/sc26-echo.pdf) will appear at [SC'26](https://sc26.supercomputing.org/).
 - [05/2026] [Crab](https://arxiv.org/abs/2604.28138) is now accessible on arXiv.
 - [05/2026] [PipeMorph](http://wutianyuan1.github.io/files/2504.19232v1.pdf) is honored with the Best Paper Award at [NSDI'26](https://www.usenix.org/conference/nsdi26/).
 - [04/2026] Three papers ([Weave](https://arxiv.org/abs/2512.11306v1), [RollArt](https://arxiv.org/abs/2512.22560), and [ASI Trace Analysis](https://www.usenix.org/conference/osdi26)) are accepted to [OSDI'26](https://www.usenix.org/conference/osdi26).
