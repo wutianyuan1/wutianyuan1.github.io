@@ -6,7 +6,7 @@ author: tianyuan_zh
 lang: zh-CN
 alternate_lang: en-US
 alternate_url: /
-description: "吴天元，香港科技大学计算机科学与工程系博士生"
+description: "吴天元，“于青萍之末，风露更婆娑。还以为此刻恰逢因果”"
 ---
 
 我是[香港科技大学（HKUST）](https://hkust.edu.hk/)计算机科学与工程系博士生，有幸师从[王威教授](https://www.cse.ust.hk/~weiwa/)。
