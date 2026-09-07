@@ -16,3 +16,22 @@ main:
     
   - title: "Misc"
     url: /markdown/
+
+  - title: "中文"
+    url: /zh/
+
+main_zh:
+  - title: "论文"
+    url: /publications/
+
+  - title: "项目"
+    url: /portfolio/
+
+  - title: "简历"
+    url: /cv/
+
+  - title: "随笔"
+    url: /markdown/
+
+  - title: "English"
+    url: /

@@ -1,5 +1,16 @@
 # Authors
 
+tianyuan_zh:
+  avatar        : "madoka.png"
+  name          : "吴天元"
+  bio           : "香港科技大学计算机科学与工程系博士生"
+  location      : "中国香港"
+  employer      : "香港科技大学"
+  email         : "twubt@connect.ust.hk"
+  googlescholar : "https://scholar.google.com/citations?user=NLrqUgIAAAAJ"
+  orcid         : "https://orcid.org/0009-0003-1820-0828"
+  github        : "wutianyuan1"
+
 Name Name:
   name        : "Name Name"
   uri         : "http://name.com"

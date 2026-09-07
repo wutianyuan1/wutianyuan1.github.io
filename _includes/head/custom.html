@@ -1,5 +1,9 @@
 {% include base_path %}
 
+{% if page.alternate_lang and page.alternate_url %}
+<link rel="alternate" hreflang="{{ page.alternate_lang }}" href="{{ page.alternate_url | absolute_url }}">
+{% endif %}
+
 <!-- start custom head snippets -->
 
 <link rel="apple-touch-icon" sizes="57x57" href="{{ base_path }}/images/apple-touch-icon-57x57.png?v=M44lzPylqQ">
@@ -42,6 +46,7 @@
   font-size: 0.75em;
   font-weight: 700;
   color: #fff;
+  background-color: #7f8c8d;
   border-radius: 4px;
   vertical-align: middle;
   letter-spacing: 0.3px;
@@ -51,6 +56,8 @@
 .pub-badge-nsdi  { background-color: #117a65; }
 .pub-badge-atc   { background-color: #2874a6; }
 .pub-badge-mlsys { background-color: #6c3483; }
+.pub-badge-sc { background-color: #a04000; }
+.pub-badge-agenticos { background-color: #76448a; }
 .pub-badge-socc  { background-color: #1e8449; }
 .pub-badge-icdcs { background-color: #b7950b; }
 .pub-badge-tpds  { background-color: #196f3d; }
