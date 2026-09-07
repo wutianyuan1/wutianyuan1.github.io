@@ -104,6 +104,59 @@
   margin-left: 6px;
   vertical-align: middle;
 }
+
+.home-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(15rem, 0.8fr);
+  gap: 2.5rem;
+  align-items: start;
+  margin-top: 1.75rem;
+}
+.home-column > h1:first-child {
+  margin-top: 0;
+}
+.home-column > ul:not(.home-post-list) {
+  padding-left: 1.25rem;
+}
+.home-post-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.home-post-list li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+.home-post-list li:first-child {
+  padding-top: 0;
+}
+.home-post-title {
+  display: block;
+  font-weight: 700;
+  line-height: 1.35;
+}
+.home-post-list time {
+  display: block;
+  margin-top: 0.2rem;
+  color: #7a8288;
+  font-size: 0.78em;
+}
+.home-post-list p {
+  margin: 0.35rem 0 0;
+  color: #555;
+  font-size: 0.88em;
+  line-height: 1.45;
+}
+.home-posts-more,
+.home-posts-empty {
+  font-size: 0.88em;
+}
+@media (max-width: 900px) {
+  .home-columns {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+}
 </style>
 
 <!-- end custom head snippets -->

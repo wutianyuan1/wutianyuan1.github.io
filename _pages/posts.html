@@ -1,0 +1,17 @@
+---
+layout: archive
+permalink: /posts/
+title: "Technical Posts"
+author_profile: true
+---
+
+{% include base_path %}
+
+{% assign technical_posts = site.categories.technical %}
+{% if technical_posts and technical_posts.size > 0 %}
+  {% for post in technical_posts %}
+    {% include archive-single.html %}
+  {% endfor %}
+{% else %}
+Technical notes coming soon.
+{% endif %}

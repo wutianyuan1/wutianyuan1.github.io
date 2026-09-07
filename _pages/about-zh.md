@@ -6,7 +6,7 @@ author: tianyuan_zh
 lang: zh-CN
 alternate_lang: en-US
 alternate_url: /
-description: "吴天元，“于青萍之末，风露更婆娑。还以为此刻恰逢因果”"
+description: "吴天元"
 ---
 
 我是[香港科技大学（HKUST）](https://hkust.edu.hk/)计算机科学与工程系博士生，有幸师从[王威教授](https://www.cse.ust.hk/~weiwa/)。
@@ -16,6 +16,9 @@ description: "吴天元，“于青萍之末，风露更婆娑。还以为此刻
 我希望生活不止于代码和系统，也能真切地感受每一天。徒步穿越青藏高原时体会的深沉寂静，以及[那些令人动容的旋律](https://wutianyuan1.github.io/markdown/)带来的情感共鸣，都提醒着我：生命短暂而偶有忧伤，其意义并不只在终点，更在于旅途本身的丰盈。
 
 邮箱：twubt [at] connect [dot] ust [dot] hk
+
+<div class="home-columns" markdown="1">
+<section class="home-column" markdown="1">
 
 最新动态
 ======
@@ -33,3 +36,30 @@ description: "吴天元，“于青萍之末，风露更婆娑。还以为此刻
 - [04/2025] 两篇论文（[Greyhound](http://wutianyuan1.github.io/files/atc25-wu-tianyuan.pdf) 和 [Toppings](http://wutianyuan1.github.io/files/atc25-li-suyi-toppings.pdf)）被 [USENIX ATC'25](https://www.usenix.org/conference/atc25) 接收。
 - [11/2024] [RASTER](http://wutianyuan1.github.io/files/socc24-final138.pdf) 被 [ACM SoCC'24](https://acmsocc.org/2024/schedule.html) 接收。
 - [06/2024] [Portus](https://www.computer.org/csdl/proceedings-article/icdcs/2024/860500a059/1ZCgEAXHPCE) 被 [ICDCS'24](https://icdcs2024.icdcs.org/) 接收。
+
+</section>
+<section class="home-column home-posts" markdown="1">
+
+最近文章
+======
+
+{% assign recent_posts = site.categories.technical %}
+{% if recent_posts and recent_posts.size > 0 %}
+<ul class="home-post-list">
+{% for post in recent_posts limit: 5 %}
+  <li>
+    <a class="home-post-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+    {% if post.excerpt %}<p>{{ post.excerpt | strip_html | strip_newlines | truncate: 120 }}</p>{% endif %}
+  </li>
+{% endfor %}
+</ul>
+
+[查看全部文章 →]({{ '/posts/' | relative_url }}){: .home-posts-more }
+{% else %}
+技术随笔即将更新。
+{: .home-posts-empty }
+{% endif %}
+
+</section>
+</div>
