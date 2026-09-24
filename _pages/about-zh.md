@@ -17,11 +17,13 @@ description: "吴天元"
 
 邮箱：twubt [at] connect [dot] ust [dot] hk
 
-<div class="home-columns" markdown="1">
+{% assign recent_posts = site.categories.technical %}
+<div class="home-columns{% unless recent_posts and recent_posts.size > 0 %} home-columns-single{% endunless %}" markdown="1">
 <section class="home-column" markdown="1">
 
 最新动态
 ======
+- [09/2026] [CPA]({{ '/files/NeurIPS26_CPA.pdf' | relative_url }}) 被 [NeurIPS'26](https://neurips.cc/Conferences/2026) 接收为 Poster。
 - [09/2026] [AgentProf](http://wutianyuan1.github.io/files/agenticos26-paper27.pdf) 将发表于 AgenticOS'26。
 - [09/2026] [Moye](https://wutianyuan1.github.io/files/sc26-echo.pdf) 将发表于 [SC'26](https://sc26.supercomputing.org/)。
 - [05/2026] [Crab](https://arxiv.org/abs/2604.28138) 已上线 arXiv。
@@ -38,13 +40,12 @@ description: "吴天元"
 - [06/2024] [Portus](https://www.computer.org/csdl/proceedings-article/icdcs/2024/860500a059/1ZCgEAXHPCE) 被 [ICDCS'24](https://icdcs2024.icdcs.org/) 接收。
 
 </section>
+{% if recent_posts and recent_posts.size > 0 %}
 <section class="home-column home-posts" markdown="1">
 
 最近文章
 ======
 
-{% assign recent_posts = site.categories.technical %}
-{% if recent_posts and recent_posts.size > 0 %}
 <ul class="home-post-list">
 {% for post in recent_posts limit: 5 %}
   <li>
@@ -56,10 +57,7 @@ description: "吴天元"
 </ul>
 
 [查看全部文章 →]({{ '/posts/' | relative_url }}){: .home-posts-more }
-{% else %}
-技术随笔即将更新。
-{: .home-posts-empty }
-{% endif %}
 
 </section>
+{% endif %}
 </div>

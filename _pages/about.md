@@ -18,11 +18,13 @@ I strive to live beyond the realm of code and systems, to experience each day au
 
 Email: twubt [at] connect [dot] ust [dot] hk
 
-<div class="home-columns" markdown="1">
+{% assign recent_posts = site.categories.technical %}
+<div class="home-columns{% unless recent_posts and recent_posts.size > 0 %} home-columns-single{% endunless %}" markdown="1">
 <section class="home-column" markdown="1">
 
 NEWS
 ======
+- [09/2026] [CPA]({{ '/files/NeurIPS26_CPA.pdf' | relative_url }}) is accepted to [NeurIPS'26](https://neurips.cc/Conferences/2026) as a poster.
 - [09/2026] [AgentProf](http://wutianyuan1.github.io/files/agenticos26-paper27.pdf) will appear at AgenticOS'26.
 - [09/2026] [Moye](https://wutianyuan1.github.io/files/sc26-echo.pdf) will appear at [SC'26](https://sc26.supercomputing.org/).
 - [05/2026] [Crab](https://arxiv.org/abs/2604.28138) is now accessible on arXiv.
@@ -39,13 +41,12 @@ NEWS
 - [06/2024] [Portus](https://www.computer.org/csdl/proceedings-article/icdcs/2024/860500a059/1ZCgEAXHPCE) is accepted to [ICDCS'24](https://icdcs2024.icdcs.org/).
 
 </section>
+{% if recent_posts and recent_posts.size > 0 %}
 <section class="home-column home-posts" markdown="1">
 
 RECENT POSTS
 ======
 
-{% assign recent_posts = site.categories.technical %}
-{% if recent_posts and recent_posts.size > 0 %}
 <ul class="home-post-list">
 {% for post in recent_posts limit: 5 %}
   <li>
@@ -57,10 +58,7 @@ RECENT POSTS
 </ul>
 
 [View all posts →]({{ '/posts/' | relative_url }}){: .home-posts-more }
-{% else %}
-Technical notes coming soon.
-{: .home-posts-empty }
-{% endif %}
 
 </section>
+{% endif %}
 </div>

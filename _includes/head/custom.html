@@ -112,6 +112,9 @@
   align-items: start;
   margin-top: 1.75rem;
 }
+.home-columns-single {
+  grid-template-columns: minmax(0, 1fr);
+}
 .home-column > h1:first-child {
   margin-top: 0;
 }
@@ -147,8 +150,7 @@
   font-size: 0.88em;
   line-height: 1.45;
 }
-.home-posts-more,
-.home-posts-empty {
+.home-posts-more {
   font-size: 0.88em;
 }
 @media (max-width: 900px) {
